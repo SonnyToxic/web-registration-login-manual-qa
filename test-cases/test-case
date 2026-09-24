@@ -1,0 +1,311 @@
+# Test Cases — Web Registration & Login
+
+## Registration Test Cases
+
+### TC-001 — Successful registration with valid data
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter a password containing at least 8 characters.
+3. Enter the same password in the Confirm Password field.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `Test1234!`
+- Confirm Password: `Test1234!`
+
+**Expected Result:**  
+Registration is successful and the user is redirected to the Account Page.
+
+---
+
+### TC-002 — Registration with a 7-character password is rejected
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter a 7-character password.
+3. Enter the same password in the Confirm Password field.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `test123`
+- Confirm Password: `test123`
+
+**Expected Result:**  
+Registration is rejected and the user is informed that the password must contain at least 8 characters.
+
+---
+
+### TC-003 — Registration with mismatched passwords is rejected
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter a valid password.
+3. Enter a different value in the Confirm Password field.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `Test1234!`
+- Confirm Password: `Test12345!`
+
+**Expected Result:**  
+Registration is rejected and the user is informed that the passwords must match.
+
+---
+
+### TC-004 — Registration with an empty Email field is rejected
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Leave the Email field empty.
+2. Enter a valid password.
+3. Enter the same password in the Confirm Password field.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: empty
+- Password: `Test1234!`
+- Confirm Password: `Test1234!`
+
+**Expected Result:**  
+Registration is rejected and the user is informed that Email is required.
+
+---
+
+### TC-005 — Registration with an 8-character password
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter an exactly 8-character password.
+3. Enter the same password in the Confirm Password field.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `Test1234`
+- Confirm Password: `Test1234`
+
+**Expected Result:**  
+Registration is successful and the user is redirected to the Account Page.
+
+---
+
+### TC-006 — Registration with empty Password and Confirm Password fields
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Leave the Password field empty.
+3. Leave the Confirm Password field empty.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: empty
+- Confirm Password: empty
+
+**Expected Result:**  
+Registration is rejected and the user is informed that Password is required.
+
+---
+
+### TC-007 — Registration with an empty Confirm Password field
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter a valid password.
+3. Leave the Confirm Password field empty.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `Test1234!`
+- Confirm Password: empty
+
+**Expected Result:**  
+Registration is rejected and the user is informed that Confirm Password is required.
+
+---
+
+### TC-008 — Registration with invalid email format
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter an email address without a valid email format.
+2. Enter a valid password.
+3. Enter the same password in the Confirm Password field.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test.example.com`
+- Password: `Test1234!`
+- Confirm Password: `Test1234!`
+
+**Expected Result:**  
+To be defined according to the email validation requirements.
+
+**Note:**  
+The current requirements specify that Email is required but do not define email format validation.
+
+---
+
+### TC-009 — Registration with a 9-character password
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter a 9-character password.
+3. Enter the same password in the Confirm Password field.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `Test12345`
+- Confirm Password: `Test12345`
+
+**Expected Result:**  
+Registration is successful and the user is redirected to the Account Page.
+
+---
+
+### TC-010 — Registration with non-matching Password and Confirm Password fields
+
+**Preconditions:**  
+User is on the registration page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter a valid password.
+3. Enter a different password in the Confirm Password field.
+4. Click **Sign Up**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `Test1234!`
+- Confirm Password: `Test12345!`
+
+**Expected Result:**  
+Registration is rejected and the user is informed that the Password and Confirm Password fields must match.
+
+---
+
+## Login Test Cases
+
+### TC-011 — Login with valid credentials
+
+**Preconditions:**  
+User is on the login page and has a registered account.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter the correct password.
+3. Click **Log In**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `Test1234!`
+
+**Expected Result:**  
+Login is successful and the user is redirected to the Account Page.
+
+---
+
+### TC-012 — Login with invalid credentials
+
+**Preconditions:**  
+User is on the login page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Enter an incorrect password.
+3. Click **Log In**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: `WrongPassword123`
+
+**Expected Result:**  
+Login is rejected and the user is not logged in.
+
+---
+
+### TC-013 — Login with an empty Email field
+
+**Preconditions:**  
+User is on the login page.
+
+**Steps:**
+1. Leave the Email field empty.
+2. Enter a valid password.
+3. Click **Log In**.
+
+**Test Data:**
+- Email: empty
+- Password: `Test1234!`
+
+**Expected Result:**  
+Login is rejected and the user is not logged in.
+
+---
+
+### TC-014 — Login with an empty Password field
+
+**Preconditions:**  
+User is on the login page.
+
+**Steps:**
+1. Enter a valid email address.
+2. Leave the Password field empty.
+3. Click **Log In**.
+
+**Test Data:**
+- Email: `test@example.com`
+- Password: empty
+
+**Expected Result:**  
+Login is rejected and the user is not logged in.
+
+---
+
+### TC-015 — Login with empty Email and Password fields
+
+**Preconditions:**  
+User is on the login page.
+
+**Steps:**
+1. Leave the Email field empty.
+2. Leave the Password field empty.
+3. Click **Log In**.
+
+**Test Data:**
+- Email: empty
+- Password: empty
+
+**Expected Result:**  
+Login is rejected and the user is not logged in.
