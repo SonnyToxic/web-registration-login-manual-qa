@@ -20,7 +20,7 @@
 | TC-012 | Login was successful with invalid credentials. | FAIL | BUG-004 |
 | TC-013 | Login was successful with an empty Email field. | FAIL | BUG-008 |
 | TC-014 | Login was successful with an empty Password field. | FAIL | BUG-005 |
-| TC-015 | Login was successful with empty Email and Password fields. | FAIL | BUG-004 |
+| TC-015 | Login was successful with empty Email and Password fields. | FAIL | BUG-009 |
 
 ---
 
